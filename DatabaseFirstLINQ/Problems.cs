@@ -45,12 +45,9 @@ namespace DatabaseFirstLINQ
         {
             // Write a LINQ query that returns the number of users in the Users table.
             // HINT: .ToList().Count
-            var users = _context.Users;
+            var users = _context.Users.ToList().Count;
 
-            foreach(User user in users)
-            {
-                Console.WriteLine(users.ToList().Count);
-            }
+            Console.WriteLine(users);
         }
 
         private void ProblemTwo()
