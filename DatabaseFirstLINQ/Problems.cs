@@ -18,6 +18,9 @@ namespace DatabaseFirstLINQ
             ProblemOne();
             ProblemTwo();
             ProblemThree();
+            //ProblemOne();
+            //ProblemTwo();
+            //ProblemThree();
             //ProblemFour();
             //ProblemFive();
             //ProblemSix();
@@ -44,11 +47,10 @@ namespace DatabaseFirstLINQ
             // HINT: .ToList().Count
             var users = _context.Users;
 
-           foreach(User user in users)
+            foreach(User user in users)
             {
                 Console.WriteLine(users.ToList().Count);
             }
-
         }
 
         private void ProblemTwo()
