@@ -40,7 +40,7 @@ namespace DatabaseFirstLINQ
             //ProblemTwenty();
         }
 
-        // <><><><><><><><> R Actions (Read) <><><><><><><><><>
+        // <><><><><><><><> R Actions (Read) <><><><><><><><><> shopping cart has users and product _context.shopingCart users/product
         private void ProblemOne()
         {
             // Write a LINQ query that returns the number of users in the Users table.
@@ -66,7 +66,13 @@ namespace DatabaseFirstLINQ
         {
             // Write a LINQ query that gets each product where the products price is greater than $150.
             // Then print the name and price of each product from the above query to the console.
+           
 
+            var productPrice = _context.Products.Where(m => m.Price > 150).ToList();
+			foreach (Product product in productPrice)
+			{
+				Console.WriteLine(product.Name + " " + product.Price);
+			}
         }
 
         private void ProblemFour()
