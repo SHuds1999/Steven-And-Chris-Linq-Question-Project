@@ -24,11 +24,11 @@ namespace DatabaseFirstLINQ
             ProblemSeven();
             ProblemEight();
             ProblemNine();
-            //ProblemTen();
-            //ProblemEleven();
-            //ProblemTwelve();
-            //ProblemThirteen();
-            //ProblemFourteen();
+            ProblemTen();
+            ProblemEleven();
+            ProblemTwelve();
+            ProblemThirteen();
+            ProblemFourteen();
             //ProblemFifteen();
             //ProblemSixteen();
             //ProblemSeventeen();
@@ -181,8 +181,9 @@ namespace DatabaseFirstLINQ
             // Create a new Product object and add that product to the Products table using LINQ.
             Product newProduct = new Product()
             {
-                Name = "Car",
-                Price = 1000
+                Name = "Remote Controlled Car",
+                Price = 1000,
+                Description = "Fastest Remote controled car on the planet,burn tires, ramp like Evel Knievel and even more. You must buy at the low price of $1000. "
             };
             _context.Products.Add(newProduct);
             _context.SaveChanges();
