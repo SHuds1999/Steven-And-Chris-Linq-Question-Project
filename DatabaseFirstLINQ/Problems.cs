@@ -151,6 +151,12 @@ namespace DatabaseFirstLINQ
         {
             // Write a LINQ query that retreives all of the products in the shopping cart of users who have the role of "Employee".
             // Then print the user's email as well as the product's name, price, and quantity to the console.
+            var userEmployee = _context.UserRoles.Include(u => u.Role).Include(u => u.User).Where(u => u.Role.RoleName == "Employee");
+            var productsInCart = _context.ShoppingCarts.Include(p => p.Product).Include(p => p.User).Where(u => userEmployee.Any(e => e.UserId == e.UserId)).ToList();
+			foreach (var itemInCart in productsInCart)
+			{
+				Console.WriteLine($"Products:{itemInCart.Product.Name} Price:{itemInCart.Product.Price} Email:{itemInCart.User.Email} Quantity:{itemInCart.Quantity} ");
+			}
 
         }
 
